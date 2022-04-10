@@ -65,5 +65,5 @@ class Calculator:
 
 
 if __name__ == '__main__':
-    c = Calculator()
-    c.calc()
+    C = Calculator()
+    C.calc()
