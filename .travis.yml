@@ -3,6 +3,6 @@ language: python
 python:
  - "3.8"
 
-install: pip install -e .
+install: pip -r requirements.txt
 
 script: pytest
