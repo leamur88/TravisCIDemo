@@ -1,5 +1,7 @@
 """Calculator Class"""
 
+# pylint: disable=no-member
+
 
 class Calculator:
     """Calculator Class"""
@@ -8,22 +10,23 @@ class Calculator:
         return
 
     def calc(self):
-		    while 1:
-			    print("What basic operation would you like to do")
-			    n1 = self.collectNum("first")
-			    operator = self.collectOperator()
-			    n2 = self.collectNum("second")
-			    if (operator == "+"):
-				      result = self.add(n1,n2)
-			    elif operator == "-":
-				      result = self.subtract(n1,n2)
-			    elif operator == "/":
-				      result = self.divide(n1,n2)
-			    elif operator == "*":
-				      result = self.multiply(n1,n2)
-			    else:
-				      raise ValueError
-			    print(f"{n1} {operator} {n2} = {result}")
+        """Calculator Constructor"""
+        while 1:
+            print("What basic operation would you like to do")
+            num_1 = self.collectNum("first")
+            operator = self.collectOperator()
+            num_2 = self.collectNum("second")
+            if operator == "+":
+                result = self.add(num_1, num_2)
+            elif operator == "-":
+                result = self.subtract(num_1, num_2)
+            elif operator == "/":
+                result = self.divide(num_1, num_2)
+            elif operator == "*":
+                result = self.multiply(num_1, num_2)
+            else:
+                raise ValueError
+            print(f"{num_1} {operator} {num_2} = {result}")
 
     @classmethod
     def collect_num(cls, string):
@@ -44,25 +47,21 @@ class Calculator:
     @classmethod
     def add(cls, number1, number2):
         """Add two numbers"""
-        print(f"{number1} + {number2} = {number1 + number2}")
         return number1 + number2
 
     @classmethod
     def subtract(cls, number1, number2):
         """Subtract two numbers"""
-        print(f"{number1} - {number2} = {number1 - number2}")
         return number1 - number2
 
     @classmethod
     def divide(cls, number1, number2):
         """Divide two numbers"""
-        print(f"{number1} / {number2} = {number1 / number2}")
         return number1 / number2
 
     @classmethod
     def multiply(cls, number1, number2):
         """Multiply two numbers"""
-        print(f"{number1} * {number2} = {number1 * number2}")
         return number1 * number2
 
 
