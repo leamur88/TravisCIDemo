@@ -9,14 +9,16 @@ class Calculator:
 			operator = self.collectOperator()
 			n2 = self.collectNum("second")
 			if (operator == "+"):
-				self.add(n1,n2)
-			elif (operator == "-"):
-				self.subtract(n1,n2)
-			elif (operator == "/"):
-				self.divide(n1,n2)
-			elif (operator == "*"):
-				self.multiply(n1,n2)
-
+				result = self.add(n1,n2)
+			elif operator == "-":
+				result = self.subtract(n1,n2)
+			elif operator == "/":
+				result = self.divide(n1,n2)
+			elif operator == "*":
+				result = self.multiply(n1,n2)
+			else:
+				raise ValueError
+			print(f"{n1} {operator} {n2} = {result}")
 
 	def collectNum(self, s):
 		try:
@@ -31,22 +33,18 @@ class Calculator:
 		return i
 
 	def add(self, n1, n2):
-		print(f"{n1} + {n2} = {n1 + n2}")
 		return n1 + n2
 
 	def subtract(self, n1, n2):
-		print(f"{n1} - {n2} = {n1 - n2}")
 		return n1 - n2
 
 	def divide(self, n1, n2):
-		print(f"{n1} / {n2} = {n1 / n2}")
 		return n1 / n2
 
 	def multiply(self, n1, n2):
-		print(f"{n1} * {n2} = {n1 * n2}")
 		return n1 * n2
 
 
 if __name__ == '__main__':
-	c = Calcluator()
+	c = Calculator()
 	c.calc()
