@@ -1,50 +1,71 @@
+"""Calculator Class"""
+
+# pylint: disable=no-member
+
+
 class Calculator:
-	def __init__(self):
-		return
+    """Calculator Class"""
 
-	def calc(self):
-		while 1:
-			print("What basic operation would you like to do")
-			n1 = self.collectNum("first")
-			operator = self.collectOperator()
-			n2 = self.collectNum("second")
-			if (operator == "+"):
-				result = self.add(n1,n2)
-			elif operator == "-":
-				result = self.subtract(n1,n2)
-			elif operator == "/":
-				result = self.divide(n1,n2)
-			elif operator == "*":
-				result = self.multiply(n1,n2)
-			else:
-				raise ValueError
-			print(f"{n1} {operator} {n2} = {result}")
+    def __init__(self):
+        return
 
-	def collectNum(self, s):
-		try:
-			return int(input(f"Enter your {s} number:\n"))
-		except ValueError:
-			raise ValueError
+    def calc(self):
+        """Calculator Constructor"""
+        while 1:
+            print("What basic operation would you like to do")
+            num_1 = self.collectNum("first")
+            operator = self.collectOperator()
+            num_2 = self.collectNum("second")
+            if operator == "+":
+                result = self.add(num_1, num_2)
+            elif operator == "-":
+                result = self.subtract(num_1, num_2)
+            elif operator == "/":
+                result = self.divide(num_1, num_2)
+            elif operator == "*":
+                result = self.multiply(num_1, num_2)
+            else:
+                raise ValueError
+            print(f"{num_1} {operator} {num_2} = {result}")
 
-	def collectOperator(self):
-		i = input(f"Enter desired operator number:\n")
-		if i not in ["+", "-", "/", "*"]:
-			raise ValueError
-		return i
+    @classmethod
+    def collect_num(cls, string):
+        """Collect Number"""
+        try:
+            return int(input(f"Enter your {string} number:\n"))
+        except ValueError as error:
+            raise ValueError from error
 
-	def add(self, n1, n2):
-		return n1 + n2
+    @classmethod
+    def collect_operator(cls):
+        """Collect Operator"""
+        i = input("Enter desired operator number:\n")
+        if i not in ["+", "-", "/", "*"]:
+            raise ValueError
+        return i
 
-	def subtract(self, n1, n2):
-		return n1 - n2
+    @classmethod
+    def add(cls, number1, number2):
+        """Add two numbers"""
+        return number1 + number2
 
-	def divide(self, n1, n2):
-		return n1 / n2
+    @classmethod
+    def subtract(cls, number1, number2):
+        """Subtract two numbers"""
+        return number1 - number2
 
-	def multiply(self, n1, n2):
-		return n1 * n2
+    @classmethod
+    def divide(cls, number1, number2):
+        """Divide two numbers"""
+        return number1 / number2
+
+    @classmethod
+    def multiply(cls, number1, number2):
+        """Multiply two numbers"""
+        return number1 * number2
 
 
 if __name__ == '__main__':
-	c = Calculator()
-	c.calc()
+    C = Calculator()
+    C.calc()
+    
