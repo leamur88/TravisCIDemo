@@ -12,6 +12,7 @@ class Calculator:
     def calc(self):
         """Calculator Constructor"""
         while 1:
+            # comment
             print("What basic operation would you like to do")
             num_1 = self.collectNum("first")
             operator = self.collectOperator()
