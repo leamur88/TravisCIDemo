@@ -1,5 +1,9 @@
 language: python
 
+branches:
+  only:
+  - main
+
 python:
  - "3.8"
 
