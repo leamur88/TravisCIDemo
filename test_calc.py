@@ -14,7 +14,7 @@ def test_multiplication():
 	c = Calculator()
 	assert c.multiply(2,3) == 6
 
-def test_multiplication():
+def test_multiplication_two():
 	c = Calculator()
 	assert c.multiply(3,3) == 9
 
