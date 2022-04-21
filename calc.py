@@ -63,7 +63,14 @@ class Calculator:
     @classmethod
     def multiply(cls, number1, number2):
         """Multiply two numbers"""
+        if number1 == number2:
+            return cls.squared(number1)
         return number1 * number2
+
+    @classmethod
+    def squared(cls, number1):
+        """Square a number"""
+        return number1 * 2
 
 
 if __name__ == '__main__':
