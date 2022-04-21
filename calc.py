@@ -70,7 +70,7 @@ class Calculator:
     @classmethod
     def squared(cls, number1):
         """Square a number"""
-        return number1 * 2
+        return number1 ** 2
 
 
 if __name__ == '__main__':
