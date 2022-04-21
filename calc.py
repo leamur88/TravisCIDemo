@@ -12,6 +12,7 @@ class Calculator:
     def calc(self):
         """Calculator Constructor"""
         while 1:
+            # comment
             print("What basic operation would you like to do")
             num_1 = self.collectNum("first")
             operator = self.collectOperator()
@@ -62,7 +63,14 @@ class Calculator:
     @classmethod
     def multiply(cls, number1, number2):
         """Multiply two numbers"""
+        if number1 == number2:
+            return cls.squared(number1)
         return number1 * number2
+
+    @classmethod
+    def squared(cls, number1):
+        """Square a number"""
+        return number1 ** 2
 
 
 if __name__ == '__main__':
